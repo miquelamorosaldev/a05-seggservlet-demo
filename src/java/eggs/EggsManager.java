@@ -24,6 +24,10 @@ public class EggsManager {
             eggsList.add("1ES92056126");
             eggsList.add("1ES92056126");
             eggsList.add("1ES92056126");
+            eggsList.add("2ES92056167");
+            eggsList.add("2ES92056564");
+            eggsList.add("2ES92056142");
+            eggsList.add("2ES92056876");
         }
     }
     /**
@@ -49,7 +53,13 @@ public class EggsManager {
      * @return 
      */
     public List<String> listEggsByType(int type) {
+        String eggType = String.valueOf(type);
         List<String> filteredEggs = new ArrayList<>();
+        for (String egg : eggsList) {
+            if(egg.substring(0,1).equals(eggType)) {
+                filteredEggs.add(egg);
+            }
+        }
         return filteredEggs;
     }
 }
